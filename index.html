@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Call for Papers — Digital Humanities 3.0: AI, Distributed Networks, and the Post-Internet</title>
+<meta name="description" content="One-day symposium at Mercy University, Manhattan, May 20, 2027. Call for papers, artist talks, and demos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ground: #edf0eb;
+    --surface: #f7f8f5;
+    --ink: #15211d;
+    --muted: #4e5c56;
+    --rule: #c9d1ca;
+    --verdigris: #2c7a67;
+    --rubric: #b83a26;
+    --edge: #9fb2a9;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #121a17;
+      --surface: #18221e;
+      --ink: #e3eae5;
+      --muted: #9aa9a2;
+      --rule: #2e3b36;
+      --verdigris: #5db79e;
+      --rubric: #e0705b;
+      --edge: #3d5049;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #121a17;
+    --surface: #18221e;
+    --ink: #e3eae5;
+    --muted: #9aa9a2;
+    --rule: #2e3b36;
+    --verdigris: #5db79e;
+    --rubric: #e0705b;
+    --edge: #3d5049;
+    color-scheme: dark;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Literata", Georgia, "Times New Roman", serif;
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+  a { color: var(--verdigris); text-underline-offset: .18em; }
+  a:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Hero: title set against a mesh with no center */
+  .hero {
+    position: relative;
+    padding: 3.5rem 0 3rem;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .mesh {
+    position: absolute; right: -4%; top: 0;
+    width: min(62%, 44rem); height: 100%;
+    pointer-events: none; opacity: .45;
+  }
+  .mesh line { stroke: var(--edge); stroke-width: 1.25; }
+  .mesh circle { fill: var(--verdigris); }
+  .mesh circle.r { fill: var(--rubric); }
+  @media (prefers-reduced-motion: no-preference) {
+    .mesh g.nodes circle { opacity: 0; animation: lit .5s ease-out forwards; }
+    .mesh g.nodes circle:nth-child(3n)   { animation-delay: .25s; }
+    .mesh g.nodes circle:nth-child(3n+1) { animation-delay: .5s; }
+    .mesh g.nodes circle:nth-child(3n+2) { animation-delay: .75s; }
+    @keyframes lit { to { opacity: 1; } }
+  }
+  .hero-text { position: relative; max-width: 100%; }
+  @media (min-width: 40rem) { h1 { white-space: nowrap; } }
+  @media (max-width: 22rem) { h1 { font-size: 1.2rem; } }
+  .kind {
+    font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700; font-size: 1.05rem; color: var(--rubric);
+    margin: 0 0 1rem;
+  }
+  h1 {
+    font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.7rem, 5.2vw, 3.8rem);
+    line-height: .95;
+    letter-spacing: -.02em;
+    margin: 0 0 1.1rem;
+  }
+  .subtitle {
+    font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+    line-height: 1.25;
+    margin: 0 0 2rem;
+    max-width: 36rem;
+  }
+  .when-where { margin: 0; font-size: 1.1rem; line-height: 1.5; }
+  .when-where strong { font-weight: 600; color: var(--rubric); }
+
+  /* Body grid */
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 21rem;
+    gap: 4rem;
+    padding: 3rem 0 4rem;
+  }
+  .prose { max-width: 40rem; }
+  .prose p { margin: 0 0 1.2rem; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+  .prose .close { font-style: italic; }
+  h2 {
+    font-family: "Syne", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700; font-size: 1.45rem; line-height: 1.2;
+    margin: 2.75rem 0 1rem;
+  }
+  .topics {
+    list-style: none; padding: 0; margin: 0;
+    columns: 2 16rem; column-gap: 2rem;
+  }
+  .topics li {
+    break-inside: avoid;
+    padding: .55rem 0 .55rem 1.1rem;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    line-height: 1.4;
+    text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+  }
+  .topics li::before {
+    content: ""; position: absolute; left: 0; top: 1.05rem;
+    width: .42rem; height: .42rem; border-radius: 50%;
+    background: var(--verdigris);
+  }
+  .formats { display: grid; gap: 1rem; margin: 0; }
+  .formats div { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1rem; border-top: 1px solid var(--rule); padding-top: .75rem; }
+  .formats dt { font-weight: 600; margin: 0; }
+  .formats dd { margin: 0; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+
+  /* Sidebar */
+  aside { align-self: start; position: sticky; top: calc(1.5rem + env(safe-area-inset-top, 0px)); }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--verdigris);
+    border-radius: 4px;
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+  .card h2 { margin-top: 0; font-size: 1.2rem; }
+  .dates { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+  .dates li { padding: .6rem 0; border-top: 1px solid var(--rule); line-height: 1.35; }
+  .dates li:first-child { border-top: 0; padding-top: 0; }
+  .dates b { display: block; color: var(--rubric); font-weight: 600; }
+  .dates span { color: var(--muted); font-size: 1rem; }
+  .card p { margin: 0 0 .9rem; font-size: 1rem; line-height: 1.5; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+  .send {
+    display: block; text-align: center;
+    background: var(--verdigris); color: var(--ground);
+    font-family: "Syne", "Helvetica Neue", Arial, sans-serif; font-weight: 700;
+    text-decoration: none; padding: .8rem 1rem; border-radius: 3px;
+    margin: 1.1rem 0 .4rem;
+  }
+  .send:hover { filter: brightness(1.08); }
+  .fine { font-size: .92rem !important; color: var(--muted); }
+  .contact { list-style: none; margin: 0 0 1.1rem; padding: .7rem 0 0; border-top: 1px solid var(--rule); font-size: 1rem; line-height: 1.45; }
+  .contact li { padding: .2rem 0; overflow-wrap: anywhere; }
+  .contact li.one { white-space: nowrap; overflow-wrap: normal; }
+  .contact b { font-weight: 600; color: var(--verdigris); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.5rem 0 2.5rem;
+    color: var(--muted); font-size: .98rem;
+  }
+
+  @media (max-width: 54rem) {
+    .grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    aside { position: static; }
+    .mesh { opacity: .35; width: 100%; right: -20%; }
+  }
+  @media (max-width: 30rem) {
+    .formats div { grid-template-columns: 1fr; gap: .25rem; }
+    .hero { padding-top: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="mesh" viewBox="0 0 600 400" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+    <g class="edges">
+      <line x1="60" y1="80" x2="170" y2="40"/><line x1="60" y1="80" x2="140" y2="150"/>
+      <line x1="170" y1="40" x2="140" y2="150"/><line x1="170" y1="40" x2="260" y2="110"/>
+      <line x1="140" y1="150" x2="260" y2="110"/><line x1="260" y1="110" x2="330" y2="30"/>
+      <line x1="330" y1="30" x2="470" y2="90"/><line x1="260" y1="110" x2="380" y2="160"/>
+      <line x1="380" y1="160" x2="470" y2="90"/><line x1="470" y1="90" x2="560" y2="40"/>
+      <line x1="470" y1="90" x2="540" y2="200"/><line x1="380" y1="160" x2="540" y2="200"/>
+      <line x1="380" y1="160" x2="250" y2="230"/><line x1="140" y1="150" x2="250" y2="230"/>
+      <line x1="250" y1="230" x2="160" y2="300"/><line x1="160" y1="300" x2="80" y2="240"/>
+      <line x1="80" y1="240" x2="60" y2="80"/><line x1="80" y1="240" x2="140" y2="150"/>
+      <line x1="250" y1="230" x2="320" y2="320"/><line x1="320" y1="320" x2="450" y2="280"/>
+      <line x1="450" y1="280" x2="540" y2="200"/><line x1="380" y1="160" x2="450" y2="280"/>
+      <line x1="330" y1="30" x2="560" y2="40"/><line x1="320" y1="320" x2="160" y2="300"/>
+      <line x1="540" y1="200" x2="580" y2="330"/><line x1="450" y1="280" x2="580" y2="330"/>
+      <line x1="320" y1="320" x2="400" y2="380"/><line x1="450" y1="280" x2="400" y2="380"/>
+    </g>
+    <g class="nodes">
+      <circle cx="60" cy="80" r="5"/><circle cx="170" cy="40" r="6"/>
+      <circle cx="140" cy="150" r="7"/><circle class="r" cx="260" cy="110" r="8"/>
+      <circle cx="330" cy="30" r="5"/><circle cx="380" cy="160" r="8"/>
+      <circle cx="250" cy="230" r="6"/><circle cx="470" cy="90" r="7"/>
+      <circle class="r" cx="540" cy="200" r="7"/><circle cx="450" cy="280" r="6"/>
+      <circle cx="320" cy="320" r="5"/><circle class="r" cx="160" cy="300" r="6"/>
+      <circle cx="560" cy="40" r="5"/><circle cx="80" cy="240" r="5"/>
+      <circle cx="580" cy="330" r="5"/><circle cx="400" cy="380" r="5"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="kind">Call for papers, artist talks, and demos</p>
+      <h1>Digital Humanities&nbsp;3.0</h1>
+      <p class="subtitle">AI, Distributed Networks, and the Post-Internet</p>
+      <p class="when-where"><strong>Thursday, May 20, 2027</strong><br>Mercy University, Manhattan Campus<br>47 West 34th Street, New York (Herald Square)</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <main class="prose">
+      <p>This symposium invites humanities scholars, artists, inventors and builders to NYC to explore how emerging technologies are forcing us to rethink and allowing us to reshape our academic, scholarly and educational practices and the infrastructures through which we produce, store, govern, and share information. Decentralized AI, blockchains and immutable networks that run on renewable energy, open-source hardware, quantum computing, and other evolving tools that incentivize the expanded use of clean, electric systems, offer an opportunity to move beyond centralized systems and institutional gatekeepers toward more open, participatory and collectively governed forms of knowledge creation, preservation and dissemination. At the same time, these technologies raise fundamental questions about the political economy of knowledge, including ownership, privacy, surveillance, authorship, expertise, authority, and power.</p>
+      <p class="close">Come join us in building the new Web3 Digital Humanities.</p>
+
+      <h2>Possible topics</h2>
+      <ul class="topics">
+        <li>Decentralized and locally run AI in research, teaching, and the archive</li>
+        <li>Blockchains, timestamping, and onchain publishing</li>
+        <li>The energy of knowledge: renewable networks and computation</li>
+        <li>Open-source hardware, self-hosting, and repair as scholarly infrastructure</li>
+        <li>Quantum computing, cryptography, and the long-term survival of records</li>
+        <li>Knowledge commons: peer review, credit, and collective governance</li>
+        <li>Authorship, ownership, and intellectual property after generative AI</li>
+        <li>Privacy, surveillance, and the political economy of platforms</li>
+        <li>Expertise and authority with permissionless tech</li>
+        <li>Artistic and curatorial practice on distributed networks</li>
+      </ul>
+
+      <h2>Formats</h2>
+      <dl class="formats">
+        <div><dt>Papers</dt><dd>20-minute presentations of research, critique, or theory.</dd></div>
+        <div><dt>Artist talks</dt><dd>Presentations or short performances of creative work made with, on, or against these technologies.</dd></div>
+        <div><dt>Demos and builds</dt><dd>Working tools, protocols, hardware, or archives, shown live and discussed.</dd></div>
+      </dl>
+    </main>
+
+    <aside>
+      <div class="card">
+        <h2>Key dates</h2>
+        <ul class="dates">
+          <li><b>February 1, 2027</b><span>Proposals due</span></li>
+          <li><b>March 1, 2027</b><span>Decisions sent</span></li>
+          <li><b>May 20, 2027</b><span>Web3 DH Symposium, NYC</span></li>
+        </ul>
+        <h2>How to propose</h2>
+        <p>Send us a 300-word abstract or project description (with links to work, code, or images), your preferred presentation format, and a 100-word bio.</p>
+        <p>You may send your proposal via Web1-2 tradDH tools, like PDF and email, or share it by way of Web3 tools, e.g., blockchain inscriptions, decentralized digital identifiers, and the wider dWeb or other permissionless distribution systems such as a local mesh network.</p>
+        <ul class="contact">
+          <li class="one"><b>email:</b> <a href="mailto:Web3.DH.NYC@gmail.com">Web3.DH.NYC@gmail.com</a></li>
+          <li><b>blockchain:</b> share the tx ID and public-ledger data</li>
+          <li class="one"><b>mesh network:</b> Meshtastic @ 5b52</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">Hosted by Mercy University.</div>
+</footer>
+</body>
+</html>
